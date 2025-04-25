@@ -11,7 +11,7 @@ Cada pregunta deberá ser respondida en un archivo fuente (.cpp) y cabecera (.h) 
 
 Deberás subir estos archivos directamente a www.gradescope.com o se puede crear un .zip que contenga todos ellos y subirlo.
 
-## Question - templates (20 points)
+## Question: templates (20 points)
 
 ## Objetivo
 Diseñar e implementar un mini-framework en C++ que permita construir redes neuronales genéricas y modulares a partir de capas definidas por el usuario, usando:
@@ -76,7 +76,7 @@ Diseñar e implementar un mini-framework en C++ que permita construir redes neuro
    ---
    ### Caso 1: Red simple Dense -> Softmax
    ```cpp
-   // Dense<float>(weight=0.5, bias=?0.1) -> Softmax<float>()
+   // Dense<float>(weight=0.5, bias=-0.1) -> Softmax<float>()
    NeuralNetwork<float, Dense, Softmax> model1(
        0.5f,    // Dense<float>::weight
       -0.1f     // Dense<float>::bias
