@@ -16,7 +16,7 @@ Deberás subir estos archivos directamente a www.gradescope.com o se puede crear 
 ## Objetivo
 Diseñar e implementar un mini-framework en C++ que permita construir redes neuronales genéricas y modulares a partir de capas definidas por el usuario, usando:
 
-- **Templates variadic** y **template-template parameters**
+- **variadic templates** y **template-template parameters**
 - **Jerarquía polimórfica genérica** (`Layer<T>`)
 - **Memoria dinámica segura** (`std::unique_ptr`)
 - Operaciones numéricas básicas y **Softmax**
@@ -54,7 +54,7 @@ Diseñar e implementar un mini-framework en C++ que permita construir redes neuro
      ```
 
    - **`Dropout<T>`**
-      - Elimina las posiciones pares de la entrada:
+      - Elimina las neuronas pares de la entrada:
         ```cpp
         // in = {x0,x1,x2,x3,...} -> out = {x1,x3,...}
         ```
@@ -69,9 +69,9 @@ Diseñar e implementar un mini-framework en C++ que permita construir redes neuro
      ```
 
 3. **Determinación de la plantilla `NeuralNetwork`**  
-   Aquí tienes **casos de uso**. A partir de ellos, **deduce**:
-   - La firma de la plantilla (`template<...> class NeuralNetwork`)
-   - El **orden** y número de **parámetros** que debe recibir el constructor
+   Aquí tienes algunos **casos de uso**. A partir de ellos, **deduce**:
+   - La firma de la plantilla (`template<...> class NeuralNetwork`).
+   - El **orden** y número de **parámetros** que debe recibir el constructor.
 
    ---
    ### Caso 1: Red simple Dense -> Softmax
