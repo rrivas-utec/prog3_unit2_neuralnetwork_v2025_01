@@ -19,7 +19,7 @@ Diseñar e implementar un mini-framework en C++ que permita construir redes neuro
 - **variadic templates** y **template-template parameters**
 - **Jerarquía polimórfica genérica** (`Layer<T>`)
 - **Memoria dinámica segura** (`std::unique_ptr`)
-- Operaciones numéricas b?sicas y **Softmax**
+- Operaciones numéricas básicas y **Softmax**
 
 ---
 
