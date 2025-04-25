@@ -1,13 +1,13 @@
-# Task #EX1: Templates  
+# Task #EX1: Templates
 **course:** Programación III  
 **unit:** 1  
 **cmake project:** prog3_unit2_neuralnetwork_v2025_01
 ## Indicaciones Específicas
 El tiempo límite para la evaluación es de 2 horas.
 
-Cada pregunta deberá ser respondida en un archivo fuente (.cpp) y cabecera (.h) correspondiente, en caso de `templates` solo incluir el archivo cabecera:
+Cada pregunta deberá ser respondida en un archivo fuente (`.cpp`) y cabecera (`.h`) correspondiente, en caso de `templates` solo incluir el archivo cabecera (`.h`):
 
- - `neural_network.h`  
+- `neural_network.h`
 
 Deberás subir estos archivos directamente a www.gradescope.com o se puede crear un .zip que contenga todos ellos y subirlo.
 
@@ -19,7 +19,7 @@ Diseñar e implementar un mini-framework en C++ que permita construir redes neuro
 - **variadic templates** y **template-template parameters**
 - **Jerarquía polimórfica genérica** (`Layer<T>`)
 - **Memoria dinámica segura** (`std::unique_ptr`)
-- Operaciones numéricas básicas y **Softmax**
+- Operaciones numéricas b?sicas y **Softmax**
 
 ---
 
@@ -39,39 +39,39 @@ Diseñar e implementar un mini-framework en C++ que permita construir redes neuro
 2. **Capas derivadas**  
    Implementa **cuatro** clases que hereden de `Layer<T>`:
 
-   - **`Dense<T>`**
-      - Un único peso (`weight`) y un único sesgo (`bias`).
-      - La dimensión de entrada = dimensión de salida = `input.size()`.
-      - `forward(in)` produce:
-        ```cpp
-        for (size_t i = 0; i < in.size(); ++i)
-            out[i] = in[i] * weight + bias;
-        ```
+    - **`Dense<T>`**
+        - Un único peso (`weight`) y un único sesgo (`bias`).
+        - La dimensión de entrada = dimensión de salida = `input.size()`.
+        - `forward(in)` produce:
+          ```cpp
+          for (size_t i = 0; i < in.size(); ++i)
+              out[i] = in[i] * weight + bias;
+          ```
 
-   - **`ReLU<T>`**
-     ```cpp
-     out[i] = std::max(T(0), in[i]);
-     ```
+    - **`ReLU<T>`**
+      ```cpp
+      out[i] = std::max(T(0), in[i]);
+      ```
 
-   - **`Dropout<T>`**
-      - Elimina las neuronas pares de la entrada:
-        ```cpp
-        // in = {x0,x1,x2,x3,...} -> out = {x1,x3,...}
-        ```
+    - **`Dropout<T>`**
+        - Elimina las neuronas pares de la entrada:
+          ```cpp
+          // in = {x0,x1,x2,x3,...} -> out = {x1,x3,...}
+          ```
 
-   - **`Softmax<T>`**
-     ```cpp
-     auto m = *std::max_element(in.begin(), in.end());
-     for (auto x : in) e.push_back(std::exp(x - m));
-     auto sum = std::accumulate(e.begin(), e.end(), T(0));
-     for (size_t i = 0; i < e.size(); ++i)
-         out[i] = e[i] / sum;
-     ```
+    - **`Softmax<T>`**
+      ```cpp
+      auto m = *std::max_element(in.begin(), in.end());
+      for (auto x : in) e.push_back(std::exp(x - m));
+      auto sum = std::accumulate(e.begin(), e.end(), T(0));
+      for (size_t i = 0; i < e.size(); ++i)
+          out[i] = e[i] / sum;
+      ```
 
 3. **Determinación de la plantilla `NeuralNetwork`**  
    Aquí tienes algunos **casos de uso**. A partir de ellos, **deduce**:
-   - La firma de la plantilla (`template<...> class NeuralNetwork`).
-   - El **orden** y número de **parámetros** que debe recibir el constructor.
+    - La firma de la plantilla (`template<...> class NeuralNetwork`).
+    - El **orden** y número de **parámetros** que debe recibir el constructor.
 
    ---
    ### Caso 1: Red simple Dense -> Softmax
