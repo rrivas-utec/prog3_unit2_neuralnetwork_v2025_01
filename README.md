@@ -91,7 +91,7 @@ Diseñar e implementar un mini-framework en C++ que permita construir redes neuro
    ---
    ### Caso 2: Dense -> ReLU -> Dense -> Softmax
    ```cpp
-   // Dense<double>(0.2, 0.0) -> ReLU<double>() -> Dense<double>(0.1, 0.1) -> Softmax<double>()
+   // Dense<double>(0.2, 0.0) -> ReLU<double>() -> Dense<double>(0.2, 0.0) -> Softmax<double>()
    NeuralNetwork<double, Dense, ReLU, Dense, Softmax> model2(
        0.2,   // Dense: weight
        0.0    // Dense: bias
@@ -106,7 +106,7 @@ Diseñar e implementar un mini-framework en C++ que permita construir redes neuro
    ---
    ### Caso 3: Dense -> Dropout -> ReLU -> Dense -> Softmax
    ```cpp
-   // Dense<float>(0.05, -0.02) -> Dropout<float>() -> ReLU<float>() -> Dense<float>(0.03, 0.0) -> Softmax<float>()
+   // Dense<float>(0.05, -0.02) -> Dropout<float>() -> ReLU<float>() -> Dense<float>(0.05, -0.02) -> Softmax<float>()
    NeuralNetwork<float, Dense, Dropout, ReLU, Dense, Softmax> model3(
        0.05f,    // Dense: weight
       -0.02f     // Dense: bias
